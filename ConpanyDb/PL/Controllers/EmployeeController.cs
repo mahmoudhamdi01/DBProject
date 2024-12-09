@@ -1,11 +1,13 @@
 ﻿using BLL.Interfaces;
 using DAL.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace PL.Controllers
 {
-    public class EmployeeController : Controller
+	[Authorize]
+	public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IDepartmentRepository _departmentRepository;

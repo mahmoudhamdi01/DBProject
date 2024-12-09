@@ -1,10 +1,12 @@
 ﻿using BLL.Interfaces;
 using BLL.Repositories;
 using DAL.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PL.Controllers
 {
+    [Authorize] // يعنى اللى هيدخل هنا هيكون عامل login بس
     public class DepartmentController : Controller
     {
         private readonly IDepartmentRepository _departmentRepositories;
